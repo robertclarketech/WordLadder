@@ -14,10 +14,8 @@ namespace WordLadder.ConsoleApp
 		{
 			List<string> dictionary = ReadDictionary();
 
-			var (start, end) = GetInput(dictionary);
-
 			Console.WriteLine();
-			Console.WriteLine("Please wait...");
+			var (start, end) = GetInput(dictionary);
 			Console.WriteLine();
 
 			dictionary = dictionary.Where(word => word.Length == start.Length).ToList();
@@ -27,11 +25,18 @@ namespace WordLadder.ConsoleApp
 				Environment.Exit(1);
 			}
 
-			Console.WriteLine("Ladder:");
-			foreach (var word in ladder)
+			Console.Write("Ladder: ");
+			for (var i = 0; i < ladder.Count; i++)
 			{
-				Console.WriteLine(word);
+				var arrow = string.Empty;
+				if (i + 1 != ladder.Count)
+				{
+					arrow = " -> ";
+				}
+				Console.Write(ladder[i] + arrow);
 			}
+			Console.WriteLine();
+			Console.WriteLine();
 		}
 
 		private static List<string> ReadDictionary()
