@@ -8,7 +8,7 @@ namespace WordLadder.ConsoleApp
 
 	internal static class Program
 	{
-		private const string DICTIONARY_NAME = "dictionary_big.txt";
+		private const string DICTIONARY_NAME = "dictionary.txt";
 
 		private static void Main()
 		{
